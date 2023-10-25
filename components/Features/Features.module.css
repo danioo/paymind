@@ -1,0 +1,29 @@
+.feature {
+  position: relative;
+  padding-top: var(--mantine-spacing-xl);
+  padding-left: var(--mantine-spacing-xl);
+}
+
+.overlay {
+  position: absolute;
+  height: rem(100px);
+  width: rem(160px);
+  top: 0;
+  left: 0;
+  background-color: rgba(24, 100, 171, 0.5);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  width: rem(38);
+  height: rem(38);
+}
+
+.title {
+  color: var(--mantine-color-white);
+}

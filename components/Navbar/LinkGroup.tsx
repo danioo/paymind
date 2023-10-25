@@ -7,6 +7,7 @@ import { IconChevronRight, IconHome2, IconFileInvoice, IconTextRecognition } fro
 import classes from './LinkGroup.module.css';
 
 interface LinkGroupProps {
+  key: string;
   icon: React.FC<any>;
   label: string;
   initiallyOpened?: boolean;
@@ -81,7 +82,7 @@ const links = [
 export function NavbarLinksGroup() {
   return (
     <Box mih={220} p="md">
-      {links.map(link => <LinkGroup {...link} />)}
+      {links.map(link => <LinkGroup key={link.label} {...link} />)}
     </Box>
   );
 }
