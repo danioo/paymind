@@ -1,5 +1,6 @@
-import { Container, Title, Button, Group, Text } from '@mantine/core';
-import { Features } from '@/components/Features/Features';
+import { Container, Title, Group, Text } from '@mantine/core';
+import Features from '@/components/Features/Features';
+import Drawer from '@/components/Drawer/Drawer';
 import classes from './Home.module.css';
 
 export default function Home() {
@@ -19,9 +20,10 @@ export default function Home() {
             <Features />
 
             <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.control}>
-                Sign for beta
-              </Button>
+              {/* <Button radius="xl" size="md" className={classes.control}>
+                Join waitlist
+              </Button> */}
+              <Drawer buttonLabel="Join waitlist" buttonClassName={classes.control} />
             </Group>
           </div>
         </div>

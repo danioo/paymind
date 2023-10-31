@@ -1,54 +1,36 @@
 import { Group, ScrollArea } from '@mantine/core';
-import {
-  IconNotes,
-  IconCalendarStats,
-  IconGauge,
-  IconPresentationAnalytics,
-  IconFileAnalytics,
-  IconAdjustments,
-  IconLock,
-} from '@tabler/icons-react';
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { cookies } from 'next/headers'
 import { UserButton } from '../UserButton/UserButton';
 import { NavbarLinksGroup } from './LinkGroup';
 import classes from './Navbar.module.css';
 
-const mockdata = [
-  { label: 'Dashboard', icon: IconGauge },
-  {
-    label: 'Market news',
-    icon: IconNotes,
-    initiallyOpened: true,
-    links: [
-      { label: 'Overview', link: '/' },
-      { label: 'Forecasts', link: '/' },
-      { label: 'Outlook', link: '/' },
-      { label: 'Real time', link: '/' },
-    ],
-  },
-  {
-    label: 'Releases',
-    icon: IconCalendarStats,
-    links: [
-      { label: 'Upcoming releases', link: '/' },
-      { label: 'Previous releases', link: '/' },
-      { label: 'Releases schedule', link: '/' },
-    ],
-  },
-  { label: 'Analytics', icon: IconPresentationAnalytics },
-  { label: 'Contracts', icon: IconFileAnalytics },
-  { label: 'Settings', icon: IconAdjustments },
-  {
-    label: 'Security',
-    icon: IconLock,
-    links: [
-      { label: 'Enable 2FA', link: '/' },
-      { label: 'Change password', link: '/' },
-      { label: 'Recovery codes', link: '/' },
-    ],
-  },
-];
+export async function Navbar() {
+  const cookieStore = cookies()
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          cookieStore.set({ name, value, ...options })
+        },
+        remove(name: string, options: CookieOptions) {
+          cookieStore.delete({ name, ...options })
+        },
+      },
+    }
+  )
+  const { data: { user } } = await supabase.auth.getUser()
+  const { data: profile } = await supabase.from('profiles').select('first_name, last_name')
 
-export function Navbar() {
+  if (user) {
+    user.user_metadata["profile"] = profile?.[0]
+  }
+
   return (
     <nav className={classes.navbar}>
       <div className={classes.header}>
@@ -59,12 +41,12 @@ export function Navbar() {
 
       <ScrollArea className={classes.links}>
         <div className={classes.linksInner}>
-          <NavbarLinksGroup />
+          <NavbarLinksGroup user={user} />
         </div>
       </ScrollArea>
 
       <div className={classes.footer}>
-        <UserButton />
+        <UserButton user={user} />
       </div>
     </nav>
   );

@@ -47,7 +47,7 @@ const mockdata = [
   },
 ];
 
-export function Features() {
+export default function Features() {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
