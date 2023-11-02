@@ -1,28 +1,15 @@
+'use client';
+
 import { Group, ScrollArea } from '@mantine/core';
-import { createServerClient, type CookieOptions } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { createBrowserClient } from '@supabase/ssr';
 import { UserButton } from '../UserButton/UserButton';
 import { NavbarLinksGroup } from './LinkGroup';
 import classes from './Navbar.module.css';
 
 export async function Navbar() {
-  const cookieStore = cookies();
-  const supabase = createServerClient(
+  const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value;
-        },
-        set(name: string, value: string, options: CookieOptions) {
-          cookieStore.set({ name, value, ...options });
-        },
-        remove(name: string, options: CookieOptions) {
-          cookieStore.delete({ name, ...options });
-        },
-      },
-    },
   );
   const {
     data: { user },
