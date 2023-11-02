@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
+import Link from 'next/link';
 import { Title, Text, Button, Container, Group } from '@mantine/core';
 import classes from './Error.module.css';
 
 export default function GlobalError({
-  error,
+  // error,
   reset,
 }: {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }) {
   return (
     <div className={classes.root}>
@@ -17,7 +17,8 @@ export default function GlobalError({
         <div className={classes.label}>500</div>
         <Title className={classes.title}>Something bad just happened...</Title>
         <Text size="lg" ta="center" className={classes.description}>
-          Our servers could not handle your request. Don't worry, our development team was already notified. Try refreshing the page.
+          Our servers could not handle your request. Don&apos;t worry, our
+          development team was already notified. Try refreshing the page.
         </Text>
         <Group justify="center">
           <Link href="/">
@@ -28,5 +29,5 @@ export default function GlobalError({
         </Group>
       </Container>
     </div>
-  )
+  );
 }

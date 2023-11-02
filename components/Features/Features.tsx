@@ -1,4 +1,4 @@
-import { Text, SimpleGrid, Container, rem } from '@mantine/core';
+import { Text, SimpleGrid, Container } from '@mantine/core';
 import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
 import classes from './Features.module.css';
 
@@ -8,7 +8,7 @@ interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
   description: string;
 }
 
-function Feature({ icon: Icon, title, description, className, ...others }: FeatureProps) {
+function Feature({ icon: Icon, title, description, ...others }: FeatureProps) {
   return (
     <div className={classes.feature} {...others}>
       <div className={classes.overlay} />
@@ -36,14 +36,12 @@ const mockdata = [
   {
     icon: IconCertificate,
     title: 'Notifications',
-    description:
-      'Get notifications in browser, via email, via SMS.',
+    description: 'Get notifications in browser, via email, via SMS.',
   },
   {
     icon: IconCoin,
     title: 'Paid on time',
-    description:
-      'Stop to worry about unpaind invoices after due date',
+    description: 'Stop to worry about unpaind invoices after due date',
   },
 ];
 

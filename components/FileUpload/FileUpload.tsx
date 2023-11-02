@@ -11,22 +11,39 @@ export function FileUpload(props: Partial<DropzoneProps>) {
       accept={[MIME_TYPES.pdf, MIME_TYPES.png, MIME_TYPES.jpeg]}
       {...props}
     >
-      <Group justify="center" gap="xl" mih={220} style={{ pointerEvents: 'none' }}>
+      <Group
+        justify="center"
+        gap="xl"
+        mih={220}
+        style={{ pointerEvents: 'none' }}
+      >
         <Dropzone.Accept>
           <IconUpload
-            style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-blue-6)' }}
+            style={{
+              width: rem(52),
+              height: rem(52),
+              color: 'var(--mantine-color-blue-6)',
+            }}
             stroke={1.5}
           />
         </Dropzone.Accept>
         <Dropzone.Reject>
           <IconX
-            style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-red-6)' }}
+            style={{
+              width: rem(52),
+              height: rem(52),
+              color: 'var(--mantine-color-red-6)',
+            }}
             stroke={1.5}
           />
         </Dropzone.Reject>
         <Dropzone.Idle>
           <IconPhoto
-            style={{ width: rem(52), height: rem(52), color: 'var(--mantine-color-dimmed)' }}
+            style={{
+              width: rem(52),
+              height: rem(52),
+              color: 'var(--mantine-color-dimmed)',
+            }}
             stroke={1.5}
           />
         </Dropzone.Idle>

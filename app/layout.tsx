@@ -1,18 +1,18 @@
-import '@mantine/core/styles.css'
-import './page.module.css'
-import { MantineProvider, ColorSchemeScript, Grid } from '@mantine/core'
-import type { Metadata } from 'next'
-import { Navbar } from '@/components/Navbar/Navbar'
+import '@mantine/core/styles.css';
+import './page.module.css';
+import { MantineProvider, ColorSchemeScript, Grid } from '@mantine/core';
+import type { Metadata } from 'next';
+import { Navbar } from '@/components/Navbar/Navbar';
 
 export const metadata: Metadata = {
   title: 'My invoice',
   description: 'Never forget to pay invoice anymore!',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -29,5 +29,5 @@ export default function RootLayout({
         </MantineProvider>
       </body>
     </html>
-  )
+  );
 }
