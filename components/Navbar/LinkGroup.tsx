@@ -50,10 +50,7 @@ export function LinkGroup({
     </Link>
   ));
   const button = (
-    <UnstyledButton
-      onClick={() => setOpened((o) => !o)}
-      className={classes.control}
-    >
+    <UnstyledButton onClick={() => setOpened((o) => !o)}>
       <Group justify="space-between" gap={0}>
         <Box style={{ display: 'flex', alignItems: 'center' }}>
           <ThemeIcon variant="light" size={30}>
@@ -78,7 +75,13 @@ export function LinkGroup({
 
   return (
     <>
-      {hasLink ? <Link href={link}>{button}</Link> : button}
+      {hasLink ? (
+        <Link href={link} className={classes.control}>
+          {button}
+        </Link>
+      ) : (
+        button
+      )}
       {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
     </>
   );

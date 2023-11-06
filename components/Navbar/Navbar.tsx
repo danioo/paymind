@@ -1,25 +1,22 @@
-'use client';
-
 import { Group, ScrollArea } from '@mantine/core';
-import { createBrowserClient } from '@supabase/ssr';
 import { UserButton } from '../UserButton/UserButton';
 import { NavbarLinksGroup } from './LinkGroup';
 import classes from './Navbar.module.css';
+import { getReadServerClient } from '@/utils/supabase-server';
 
 export async function Navbar() {
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  );
+  const supabase = getReadServerClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
   const { data: profile } = await supabase
     .from('profiles')
-    .select('first_name, last_name');
+    .select('first_name, last_name')
+    .eq('id', user?.id)
+    .single();
 
   if (user) {
-    user.user_metadata['profile'] = profile?.[0];
+    user.user_metadata['profile'] = profile;
   }
 
   return (

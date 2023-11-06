@@ -3,10 +3,10 @@
 import { useToggle, upperFirst } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
 import { Text, Paper, Group, Button, Stack } from '@mantine/core';
-import { createBrowserClient } from '@supabase/ssr';
 import { useRouter } from 'next/navigation';
 import { PasswordInput, TextInput } from '@/components/Inputs/Inputs';
 import { ChangeEvent } from 'react';
+import { getBrowserClient } from '@/utils/supabase-client';
 
 type FormValues = {
   email: string;
@@ -31,10 +31,7 @@ export default function Profile() {
           : null,
     },
   });
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  );
+  const supabase = getBrowserClient();
   const router = useRouter();
 
   const handleLogin = async (values: FormValues) => {
@@ -42,11 +39,6 @@ export default function Profile() {
       email: values.email,
       password: values.password,
     });
-
-    router.refresh();
-  };
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
 
     router.refresh();
   };
@@ -114,8 +106,6 @@ export default function Profile() {
           </Button>
         </Group>
       </form>
-
-      <Button onClick={handleLogout}>LogOut</Button>
     </Paper>
   );
 }
