@@ -564,15 +564,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@supabase/ssr@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@supabase/ssr@npm:0.0.4"
+"@supabase/ssr@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@supabase/ssr@npm:0.0.10"
   dependencies:
     cookie: ^0.5.0
     ramda: ^0.29.0
   peerDependencies:
     "@supabase/supabase-js": ^2.33.1
-  checksum: 33b00cc862366899159ce9dd13ba6e7da604b8a74e617f5ec9bd363d1b5b433a8a6614366b32543231dbb1835da9bdd4ffd6198df28e19820b18323bbdf31ae7
+  checksum: ab26a51ec2e6571f0f3896f941e535f522e38e2614cc380b656d67ca66395d23e9213a175d17b1012b8a06278ccf752a787e387d8c37d0bac84f3c7bcd34f2c6
   languageName: node
   linkType: hard
 
@@ -3482,7 +3482,7 @@ __metadata:
     "@mantine/hooks": ^7.1.3
     "@mantine/modals": ^7.1.3
     "@mantine/notifications": ^7.2.2
-    "@supabase/ssr": ^0.0.4
+    "@supabase/ssr": ^0.0.10
     "@supabase/supabase-js": ^2.38.4
     "@tabler/icons-react": ^2.40.0
     "@types/next": ^9.0.0
