@@ -180,24 +180,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lucidtech/las-sdk-core@npm:14.0.0":
-  version: 14.0.0
-  resolution: "@lucidtech/las-sdk-core@npm:14.0.0"
+"@lucidtech/las-sdk-core@npm:14.0.1":
+  version: 14.0.1
+  resolution: "@lucidtech/las-sdk-core@npm:14.0.1"
   dependencies:
     axios: ^0.24.0
     buffer: ^6.0.3
     js-base64: ^3.7.5
-  checksum: 59b901069fca9aa586f74dc239603bc84c6a32311d68df44ebfb1a85ff8dc42d41faebff930f78f1228e8f33c74f7c813aa08f8f83f90bcdd5e5f82ab83272e9
+  checksum: e9b6e17abe534dba5aa2e40e7fcca038851851c3d637f3fa89735bad6ee001646860a1c9489c343a101f0a3824c0111a92a62fc43a28d09543008259ab4c58b7
   languageName: node
   linkType: hard
 
-"@lucidtech/las-sdk-node@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "@lucidtech/las-sdk-node@npm:14.0.0"
+"@lucidtech/las-sdk-node@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "@lucidtech/las-sdk-node@npm:14.0.1"
   dependencies:
-    "@lucidtech/las-sdk-core": 14.0.0
+    "@lucidtech/las-sdk-core": 14.0.1
     axios: ^0.24.0
-  checksum: ad5ab4935aef09dc01c138e45bc5b5ab45a21589e0f10fbd6d5a9e456efaee774d4839d9ff129538bb3909da1d7ef7ef19cea2c05e04a4540b6ee8a398acef1a
+  checksum: d4fdc7ff894614e9099768e84d9fe75dc7829e8682348ee99fc6ed2c3512dd309ddc338c197deb558e2341e62bbcd04aabec5ed6faa8686d3ec363ddb5d3b1bb
   languageName: node
   linkType: hard
 
@@ -3475,7 +3475,7 @@ __metadata:
   resolution: "my-invoice@workspace:."
   dependencies:
     "@knocklabs/node": ^0.4.24
-    "@lucidtech/las-sdk-node": ^14.0.0
+    "@lucidtech/las-sdk-node": ^14.0.1
     "@mantine/core": ^7.1.3
     "@mantine/dropzone": ^7.1.3
     "@mantine/form": ^7.1.3
