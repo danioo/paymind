@@ -219,17 +219,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dropzone@npm:^7.1.3":
-  version: 7.1.3
-  resolution: "@mantine/dropzone@npm:7.1.3"
+"@mantine/dropzone@npm:^7.2.2":
+  version: 7.2.2
+  resolution: "@mantine/dropzone@npm:7.2.2"
   dependencies:
     react-dropzone-esm: 15.0.1
   peerDependencies:
-    "@mantine/core": 7.1.3
-    "@mantine/hooks": 7.1.3
+    "@mantine/core": 7.2.2
+    "@mantine/hooks": 7.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: aaddd25b39947587b3d36f8dac18509eabb271d8af54452cc9329af6e98138f5fcdb81f0e506105a53d75323b9ad6db521691297c3cb3b8c8fc7decaabe6061e
+  checksum: 7abf383b47a3ab8f6d8fee8c9735816809787f66513e85050eea848e6f7c0719342450d1a73d5246c030ed062d1db73130a0467628f3f5d5cbd2c7f3f21f9b0b
   languageName: node
   linkType: hard
 
@@ -3477,7 +3477,7 @@ __metadata:
     "@knocklabs/node": ^0.4.24
     "@lucidtech/las-sdk-node": ^14.0.1
     "@mantine/core": ^7.1.3
-    "@mantine/dropzone": ^7.1.3
+    "@mantine/dropzone": ^7.2.2
     "@mantine/form": ^7.1.3
     "@mantine/hooks": ^7.1.3
     "@mantine/modals": ^7.1.3
