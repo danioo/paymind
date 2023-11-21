@@ -1,5 +1,5 @@
 .root {
-  width: calc(100% - rem(300px));
+  height: 100vh;
   background-color: #11284b;
   background-size: cover;
   background-position: center;

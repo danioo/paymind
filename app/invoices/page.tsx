@@ -1,3 +1,5 @@
-export default function Invoices() {
-  return <div>A list of invoices</div>;
+import { InvoicesTable } from '@/components/InvoicesTable/InvoicesTable';
+
+export default async function Invoices() {
+  return <InvoicesTable />;
 }
