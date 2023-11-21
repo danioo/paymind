@@ -40,6 +40,7 @@ export default function Profile() {
       password: values.password,
     });
 
+    router.push('/');
     router.refresh();
   };
 

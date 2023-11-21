@@ -1,62 +1,117 @@
-import { Group, Text, rem } from '@mantine/core';
-import { IconUpload, IconPhoto, IconX } from '@tabler/icons-react';
-import { Dropzone, DropzoneProps, MIME_TYPES } from '@mantine/dropzone';
+'use client';
 
-export function FileUpload(props: Partial<DropzoneProps>) {
-  return (
-    <Dropzone
-      onDrop={(files) => console.log('accepted files', files)}
-      onReject={(files) => console.log('rejected files', files)}
-      maxSize={3 * 1024 ** 2}
-      accept={[MIME_TYPES.pdf, MIME_TYPES.png, MIME_TYPES.jpeg]}
-      {...props}
-    >
-      <Group
-        justify="center"
-        gap="xl"
-        mih={220}
-        style={{ pointerEvents: 'none' }}
+import { useRef, useState } from 'react';
+import {
+  Button,
+  Group,
+  Text,
+  Center,
+  rem,
+  px,
+  useMantineTheme,
+} from '@mantine/core';
+import { IconX, IconDownload, IconCloudUpload } from '@tabler/icons-react';
+import { Dropzone, MIME_TYPES, FileWithPath } from '@mantine/dropzone';
+import { pdfjs, Document, Page } from 'react-pdf';
+import classes from './FileUpload.module.css';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString();
+
+export function FileUpload() {
+  const theme = useMantineTheme();
+  const [files, setFiles] = useState<FileWithPath[]>([]);
+  const openRef = useRef<() => void>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const previews = files.map((file, index) => {
+    return (
+      <Document
+        onLoadError={(error) => console.error(error)}
+        key={index}
+        file={file}
       >
-        <Dropzone.Accept>
-          <IconUpload
-            style={{
-              width: rem(52),
-              height: rem(52),
-              color: 'var(--mantine-color-blue-6)',
-            }}
-            stroke={1.5}
-          />
-        </Dropzone.Accept>
-        <Dropzone.Reject>
-          <IconX
-            style={{
-              width: rem(52),
-              height: rem(52),
-              color: 'var(--mantine-color-red-6)',
-            }}
-            stroke={1.5}
-          />
-        </Dropzone.Reject>
-        <Dropzone.Idle>
-          <IconPhoto
-            style={{
-              width: rem(52),
-              height: rem(52),
-              color: 'var(--mantine-color-dimmed)',
-            }}
-            stroke={1.5}
-          />
-        </Dropzone.Idle>
+        <Page pageNumber={1} width={px('25rem') as number} />
+      </Document>
+    );
+  });
 
-        <div>
-          <Text size="xl" inline>
-            Drag invoice(s) here or click to select files
+  return (
+    <div className={classes.wrapper}>
+      <Dropzone
+        openRef={openRef}
+        onDrop={(files) => {
+          const dataTransfer = new DataTransfer();
+
+          files.forEach((file) => {
+            dataTransfer.items.add(file);
+          });
+
+          if (inputRef.current) {
+            inputRef.current.files = dataTransfer.files;
+          }
+
+          setFiles(files);
+        }}
+        onReject={(files) => console.log(files)}
+        className={classes.dropzone}
+        radius="md"
+        accept={[MIME_TYPES.pdf]}
+        maxSize={30 * 1024 ** 2}
+        multiple={false}
+      >
+        <div style={{ pointerEvents: 'none' }}>
+          <Group justify="center">
+            <Dropzone.Accept>
+              <IconDownload
+                style={{ width: rem(50), height: rem(50) }}
+                color={theme.colors.blue[6]}
+                stroke={1.5}
+              />
+            </Dropzone.Accept>
+            <Dropzone.Reject>
+              <IconX
+                style={{ width: rem(50), height: rem(50) }}
+                color={theme.colors.red[6]}
+                stroke={1.5}
+              />
+            </Dropzone.Reject>
+            <Dropzone.Idle>
+              <IconCloudUpload
+                style={{ width: rem(50), height: rem(50) }}
+                stroke={1.5}
+              />
+            </Dropzone.Idle>
+          </Group>
+
+          <Text ta="center" fw={700} fz="lg" mt="xl">
+            <Dropzone.Accept>Drop files here</Dropzone.Accept>
+            <Dropzone.Reject>Pdf file less than 30mb</Dropzone.Reject>
+            <Dropzone.Idle>Upload invoice</Dropzone.Idle>
           </Text>
-          <Text size="sm" c="dimmed" inline mt={7}>
-            Attach as many files as you like, each file should not exceed 5mb
+          <Text ta="center" fz="sm" mt="xs" c="dimmed">
+            Drag&apos;n&apos;drop file here to upload. We can accept only{' '}
+            <i>.pdf</i> file that less less than 30mb in size.
           </Text>
         </div>
-      </Group>
-    </Dropzone>
+      </Dropzone>
+
+      <input
+        type="file"
+        name="file"
+        ref={inputRef}
+        className={classes.fileInput}
+      />
+
+      <Center>{previews}</Center>
+
+      <Button className={classes.control} type="submit" size="md" radius="xl">
+        Process
+      </Button>
+    </div>
   );
 }
