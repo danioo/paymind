@@ -18,7 +18,7 @@
     "@mantine/modals": "^7.2.2",
     "@mantine/notifications": "^7.2.2",
     "@supabase/ssr": "^0.0.10",
-    "@supabase/supabase-js": "^2.38.4",
+    "@supabase/supabase-js": "^2.39.0",
     "@tabler/icons-react": "^2.41.0",
     "next": "^14.0.2",
     "posthog-js": "^1.93.2",
