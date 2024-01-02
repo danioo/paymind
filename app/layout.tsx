@@ -1,9 +1,9 @@
 import '@mantine/core/styles.css';
 import classes from './page.module.css';
-import { ColorSchemeScript } from '@mantine/core';
+import { ColorSchemeScript, Grid } from '@mantine/core';
 import type { Metadata } from 'next';
 import MantineProvider from '@/components/MantineProvider/MantineProvider';
-import { CSPostHogProvider } from '@/app/providers';
+import { Navbar } from '@/components/Navbar/Navbar';
 
 export const metadata: Metadata = {
   title: 'paymind',
@@ -21,11 +21,15 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
 
-      <CSPostHogProvider>
-        <body className={classes.root}>
-          <MantineProvider>{children}</MantineProvider>
-        </body>
-      </CSPostHogProvider>
+      <body className={classes.root}>
+        <MantineProvider>
+          <Grid gutter="0">
+            <Navbar />
+
+            <div className={classes.children}>{children}</div>
+          </Grid>
+        </MantineProvider>
+      </body>
     </html>
   );
 }

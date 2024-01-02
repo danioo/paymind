@@ -1,3 +1,9 @@
 .root {
   height: 100vh;
 }
+
+.children {
+  height: 100vh;
+  width: calc(100vw - rem(300px));
+  margin-left: rem(300px);
+}
