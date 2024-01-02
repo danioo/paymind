@@ -233,15 +233,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/form@npm:^7.3.0":
-  version: 7.3.0
-  resolution: "@mantine/form@npm:7.3.0"
+"@mantine/form@npm:^7.3.2":
+  version: 7.3.2
+  resolution: "@mantine/form@npm:7.3.2"
   dependencies:
     fast-deep-equal: ^3.1.3
     klona: ^2.0.6
   peerDependencies:
     react: ^18.2.0
-  checksum: 5fe2dc7281fa6eb08fef584a37afac4d50d22ce075d0c8030590bcf6c42eb0109537df055295c7e01217b9fd3cf69bb82d68ebdcb8465940daf555937c33e831
+  checksum: 081258ce16f18026628c1b64a5cd5d03a63c5b31e8279cbe8a1974599319f3fc05e12c7e646322106d12ce55b73df6cbb22ad8e12b94e796d540133d36a9241f
   languageName: node
   linkType: hard
 
@@ -3778,7 +3778,7 @@ __metadata:
     "@lucidtech/las-sdk-node": ^14.0.1
     "@mantine/core": ^7.2.2
     "@mantine/dropzone": ^7.2.2
-    "@mantine/form": ^7.3.0
+    "@mantine/form": ^7.3.2
     "@mantine/hooks": ^7.3.2
     "@mantine/modals": ^7.2.2
     "@mantine/notifications": ^7.2.2
