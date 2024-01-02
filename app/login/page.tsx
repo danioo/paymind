@@ -45,7 +45,7 @@ export default function Profile() {
   };
 
   return (
-    <Paper radius="md" shadow="sm" p="xl" m="auto">
+    <Paper radius="md" shadow="sm" p="xl" m="xl">
       <Text size="lg" pb="sm" fw={500}>
         Welcome to paymind
       </Text>

@@ -1,19 +1,21 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
 import { Button } from '@mantine/core';
-import { getBrowserClient } from '@/utils/supabase-client';
+import { redirect } from 'next/navigation';
+import { UserInfo } from '@/components/UserInfo/UserInfo';
 
-export default function Invoices() {
-  const supabase = getBrowserClient();
-  const router = useRouter();
-
+export default async function Invoices() {
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    'use server';
 
-    router.push('/');
-    router.refresh();
+    redirect('/auth/logout');
   };
 
-  return <Button onClick={handleLogout}>LogOut</Button>;
+  return (
+    <>
+      <UserInfo />
+
+      <form action={handleLogout}>
+        <Button type="submit">LogOut</Button>
+      </form>
+    </>
+  );
 }
