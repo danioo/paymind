@@ -1,76 +1,35 @@
 import { FileUpload } from '@/components/FileUpload/FileUpload';
 import PostHogClient from '@/utils/posthog-client';
 import { getServerClient } from '@/utils/supabase-server';
-import {
-  ArrayPrediction,
-  Client,
-  ClientCredentials,
-  Prediction,
-} from '@lucidtech/las-sdk-node';
 import { Container } from '@mantine/core';
 import { redirect } from 'next/navigation';
+import { Client, product } from 'mindee';
 
 export default async function Process() {
   const processFile = async (data: FormData) => {
     'use server';
 
-    const client = new Client(
-      new ClientCredentials(
-        'https://api.lucidtech.ai/v1',
-        '2c1724vghlv7haik1kha1lk06p',
-        'bp1nvs07meaaoibmp3o00qce74n0m3gas0dpllr82mattkchstv',
-        'auth.lucidtech.ai',
-      ),
-    );
-
+    const mindeeClient = new Client({
+      apiKey: 'aca7d99c65e2834f1ace2f0f9de2ef63',
+    });
     const file = data.get('file') as File;
     const fileArrayBuffer = await file.arrayBuffer();
-    const document = await client.createDocument(
-      fileArrayBuffer,
-      'application/pdf',
-    );
-    const response = await client.createPrediction(
-      document.documentId,
-      'las:model:b9db0ed1a40e4ef4b2fa819c8fbfe2cd',
+    const buffer = Buffer.from(fileArrayBuffer);
+    const base64String = buffer.toString('base64');
+    const inputSource = mindeeClient.docFromBase64(base64String, file.name);
+    const apiResponse = await mindeeClient.parse(
+      product.InvoiceV4,
+      inputSource,
     );
 
     // save to db
-    // const buffer = Buffer.from(fileArrayBuffer);
-    // const base64String = buffer.toString('base64');
-    const dueDate = response.predictions
-      .filter((prediction) => prediction.label == 'due_date')
-      .sort(
-        (
-          a: ArrayPrediction | Prediction,
-          b: ArrayPrediction | Prediction,
-        ): number => {
-          const aValue = a?.value ?? 0;
-          const bValue = b?.value ?? 0;
-
-          if (aValue > bValue) {
-            return aValue as number;
-          } else {
-            return bValue as number;
-          }
-        },
-      )?.[0]?.value;
-    const totalAmount = response.predictions
-      .filter((prediction) => prediction.label == 'total_amount')
-      .sort(
-        (
-          a: ArrayPrediction | Prediction,
-          b: ArrayPrediction | Prediction,
-        ): number => {
-          const aValue = a?.value ?? 0;
-          const bValue = b?.value ?? 0;
-
-          if (aValue > bValue) {
-            return aValue as number;
-          } else {
-            return bValue as number;
-          }
-        },
-      )?.[0]?.value;
+    const dueDate = apiResponse.document.inference.prediction.dueDate.value;
+    const totalAmount =
+      apiResponse.document.inference.prediction.totalAmount.value;
+    const invoiceNumber =
+      apiResponse.document.inference.prediction.invoiceNumber.value;
+    const supplierName =
+      apiResponse.document.inference.prediction.supplierName.value;
 
     const supabase = getServerClient();
     const posthogClient = PostHogClient();
@@ -87,6 +46,8 @@ export default async function Process() {
       const { data: invoice, error } = await supabase
         .from('invoices')
         .insert({
+          supplier_name: supplierName,
+          invoice_number: invoiceNumber,
           due_date: dueDate,
           invoice_amount: totalAmount,
           // file_base64: base64String,
@@ -98,7 +59,7 @@ export default async function Process() {
       console.log('error', error);
 
       if (invoice?.id) {
-        redirect(`/invoices/${invoice.id}`);
+        redirect(`/invoices/${invoice.id}/edit`);
       } else {
         redirect('/invoices');
       }

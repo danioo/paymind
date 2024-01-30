@@ -2,7 +2,12 @@
 
 import { getBrowserClient } from '@/utils/supabase-client';
 import { ActionIcon, Group } from '@mantine/core';
-import { IconBellOff, IconBell, IconTrashXFilled } from '@tabler/icons-react';
+import {
+  IconBellOff,
+  IconBell,
+  IconTrashXFilled,
+  IconEdit,
+} from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 
 export default function InvoicesTableActions({
@@ -33,6 +38,10 @@ export default function InvoicesTableActions({
 
   return (
     <Group>
+      <ActionIcon size="sm" onClick={() => router.push(`/invoices/${id}/edit`)}>
+        <IconEdit />
+      </ActionIcon>
+
       <ActionIcon
         size="sm"
         onClick={() => toggleNotifications(notificationsEnabled, id)}
