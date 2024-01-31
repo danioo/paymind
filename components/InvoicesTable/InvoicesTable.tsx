@@ -15,6 +15,9 @@ export type Invoice = {
   id: number;
   invoice_number: string;
   due_date: string;
+  supplier_name: string;
+  invoice_amount: number;
+  notifications_on: boolean;
 };
 
 export async function InvoicesTable() {
@@ -30,12 +33,14 @@ export async function InvoicesTable() {
   const rows = invoices?.map((invoice) => {
     return (
       <TableTr key={invoice.id}>
+        <TableTd>{invoice.supplier_name}</TableTd>
         <TableTd>
           <Anchor component="button" fz="sm">
             {invoice.invoice_number}
           </Anchor>
         </TableTd>
         <TableTd>{invoice.due_date}</TableTd>
+        <TableTd>{invoice.invoice_amount}</TableTd>
         <TableTd>
           <InvoicesTableActions
             id={invoice.id}
@@ -51,8 +56,10 @@ export async function InvoicesTable() {
       <Table verticalSpacing="xs">
         <TableThead>
           <TableTr>
+            <TableTh>Supplier name</TableTh>
             <TableTh>Invoice No.</TableTh>
             <TableTh>Due date</TableTh>
+            <TableTh>Invoice amount</TableTh>
             <TableTh>Actions</TableTh>
           </TableTr>
         </TableThead>
