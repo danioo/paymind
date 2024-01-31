@@ -20,7 +20,7 @@
     "@mantine/notifications": "^7.5.0",
     "@supabase/ssr": "^0.0.10",
     "@supabase/supabase-js": "^2.39.0",
-    "@tabler/icons-react": "^2.42.0",
+    "@tabler/icons-react": "^2.46.0",
     "dayjs": "^1.11.10",
     "mindee": "^4.6.1",
     "next": "^14.0.2",

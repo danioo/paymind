@@ -660,22 +660,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:^2.42.0":
-  version: 2.42.0
-  resolution: "@tabler/icons-react@npm:2.42.0"
+"@tabler/icons-react@npm:^2.46.0":
+  version: 2.46.0
+  resolution: "@tabler/icons-react@npm:2.46.0"
   dependencies:
-    "@tabler/icons": 2.42.0
+    "@tabler/icons": 2.46.0
     prop-types: ^15.7.2
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: be4956ddfb9ba0165f815c57189444b4b6a03d7c527381dfcb017d9911f6ac4fd9166aa718d94593339e27e298646863e5f5e96e84e11cf69956413e072fc448
+  checksum: 5aafc814602f108e0a02a65a3c267c427b0ca36bcd8684adcc804dce26119c15d4badf0e3c7979c1bd19fb642b44a581372adb2caf820028c95583625a9299f1
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:2.42.0":
-  version: 2.42.0
-  resolution: "@tabler/icons@npm:2.42.0"
-  checksum: 0330b5454f445cbf25f18ba3b2d6386c10b3e266feee14a6d5e3ed5a686987e3bb8c1d50eb2f181032c81a96b6c250d89e7247813934ce373adb10867e316578
+"@tabler/icons@npm:2.46.0":
+  version: 2.46.0
+  resolution: "@tabler/icons@npm:2.46.0"
+  checksum: b805e92f0a7a0a634f618eb20626e496e270c9b67d0a79fe99caf618fe7b6dc7138754a1687dfeaefa29e22e9928824cc4c7e48145808fe32088f1d0ceba464a
   languageName: node
   linkType: hard
 
@@ -3883,7 +3883,7 @@ __metadata:
     "@mantine/notifications": ^7.5.0
     "@supabase/ssr": ^0.0.10
     "@supabase/supabase-js": ^2.39.0
-    "@tabler/icons-react": ^2.42.0
+    "@tabler/icons-react": ^2.46.0
     "@types/next": ^9.0.0
     "@types/node": ^20
     "@types/react": ^18
@@ -5561,11 +5561,11 @@ __metadata:
 
 "typescript@patch:typescript@^5#~builtin<compat/typescript>":
   version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=14eedb"
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f61375590b3162599f0f0d5b8737877ac0a7bc52761dbb585d67e7b8753a3a4c42d9a554c4cc929f591ffcf3a2b0602f65ae3ce74714fd5652623a816862b610
+  checksum: 4e604a9e107ce0c23b16a2f8d79d0531d4d8fe9ebbb7a8c395c66998c39892f0e0a071ef0b0d4e66420a8ec2b8d6cfd9cdb29ba24f25b37cba072e9282376df9
   languageName: node
   linkType: hard
 
