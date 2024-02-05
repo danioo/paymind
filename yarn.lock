@@ -219,18 +219,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dates@npm:^7.4.1":
-  version: 7.4.1
-  resolution: "@mantine/dates@npm:7.4.1"
+"@mantine/dates@npm:^7.5.1":
+  version: 7.5.1
+  resolution: "@mantine/dates@npm:7.5.1"
   dependencies:
     clsx: 2.0.0
   peerDependencies:
-    "@mantine/core": 7.4.1
-    "@mantine/hooks": 7.4.1
+    "@mantine/core": 7.5.1
+    "@mantine/hooks": 7.5.1
     dayjs: ">=1.0.0"
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 18df67777806bcdbf829287736058ba0c36c0a0142d027a55b05777e982af2a9867503232c707f831f8c51b7ab1c23d1ba6699e10ba11281554e2521ef412c71
+  checksum: a6cf62136510fb21acb94433b9526b9a375afca230eb8f24ff2dabbfc866630e1f8d55a81672f87c3728da4828e2fafeb7efa59b12a0410adcde538ed7d7d315
   languageName: node
   linkType: hard
 
@@ -3882,7 +3882,7 @@ __metadata:
     "@knocklabs/node": ^0.5.0
     "@lucidtech/las-sdk-node": ^14.0.1
     "@mantine/core": ^7.2.2
-    "@mantine/dates": ^7.4.1
+    "@mantine/dates": ^7.5.1
     "@mantine/dropzone": ^7.2.2
     "@mantine/form": ^7.3.2
     "@mantine/hooks": ^7.3.2
