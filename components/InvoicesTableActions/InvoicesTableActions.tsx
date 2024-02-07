@@ -14,19 +14,19 @@ export default function InvoicesTableActions({
   id,
   notificationsEnabled,
 }: {
-  id: string;
+  id: number;
   notificationsEnabled: boolean;
 }) {
   const router = useRouter();
   const supabase = getBrowserClient();
-  const deleteInvoice = async (id: string) => {
+  const deleteInvoice = async (id: number) => {
     await supabase.from('invoices').delete().eq('id', id);
 
     router.refresh();
   };
   const toggleNotifications = async (
     notificationsEnabled: boolean,
-    id: string,
+    id: number,
   ) => {
     await supabase
       .from('invoices')

@@ -8,27 +8,18 @@ import {
   TableTbody,
   Anchor,
 } from '@mantine/core';
-import { getServerClient } from '@/utils/supabase-server';
+import { getReadServerClient } from '@/utils/supabase-server';
 import InvoicesTableActions from '../InvoicesTableActions/InvoicesTableActions';
 
-export type Invoice = {
-  id: number;
-  invoice_number: string;
-  due_date: string;
-  supplier_name: string;
-  invoice_amount: number;
-  notifications_on: boolean;
-};
-
 export async function InvoicesTable() {
-  const supabase = getServerClient();
+  const supabase = getReadServerClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
   const { data: invoices } = await supabase
     .from('invoices')
     .select()
-    .eq('user_id', user?.id)
+    .eq('user_id', user?.id ?? '')
     .order('due_date');
   const rows = invoices?.map((invoice) => {
     return (

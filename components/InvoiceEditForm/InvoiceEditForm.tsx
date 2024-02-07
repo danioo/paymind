@@ -1,33 +1,35 @@
 'use client';
 
-import { useForm } from '@mantine/form';
+import { TransformedValues, useForm } from '@mantine/form';
 import { DatePickerInput, NumberInput, TextInput } from '../Inputs/Inputs';
 import { Button, Checkbox, Group } from '@mantine/core';
 import { getBrowserClient } from '@/utils/supabase-client';
 import { useRouter } from 'next/navigation';
-import { Invoice } from '../InvoicesTable/InvoicesTable';
+import { Database } from '@/types/schema.gen';
 
-export function InvoiceEditForm({ invoice }: { invoice: Invoice | null }) {
+export function InvoiceEditForm({
+  invoice,
+}: {
+  invoice: Database['public']['Tables']['invoices']['Row'];
+}) {
   const router = useRouter();
   const form = useForm({
     initialValues: {
-      id: invoice?.id ?? '',
-      supplier_name: invoice?.supplier_name ?? '',
-      invoice_number: invoice?.invoice_number ?? '',
-      invoice_amount: invoice?.invoice_amount ?? 0.0,
+      id: invoice.id,
+      supplier_name: invoice.supplier_name,
+      invoice_number: invoice.invoice_number,
+      invoice_amount: invoice.invoice_amount,
       due_date: invoice?.due_date ? new Date(invoice.due_date) : new Date(),
-      notifications_on: invoice?.notifications_on ?? false,
+      notifications_on: invoice.notifications_on,
     },
+
+    transformValues: (values) => ({
+      ...values,
+      due_date: new Date(values.due_date ?? ''),
+    }),
   });
 
-  const handleSubmit = async (values: {
-    id: string | number;
-    supplier_name: string;
-    invoice_number: string;
-    invoice_amount: number;
-    due_date: Date;
-    notifications_on: boolean;
-  }) => {
+  const handleSubmit = async (values: TransformedValues<typeof form>) => {
     const supabase = getBrowserClient();
     const { error } = await supabase
       .from('invoices')
@@ -35,10 +37,10 @@ export function InvoiceEditForm({ invoice }: { invoice: Invoice | null }) {
         supplier_name: values.supplier_name,
         invoice_number: values.invoice_number,
         invoice_amount: values.invoice_amount,
-        due_date: values.due_date,
+        due_date: values.due_date?.toISOString(),
         notifications_on: values.notifications_on,
-      })
-      .eq('id', values.id);
+      } as Database['public']['Tables']['invoices']['Update'])
+      .eq('id', values.id ?? 0);
 
     if (!error) {
       router.push('/invoices');

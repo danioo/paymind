@@ -5,11 +5,15 @@ import { getReadServerClient } from '@/utils/supabase-server';
 
 export async function UserInfo() {
   const supabase = getReadServerClient();
-  const { data: user } = await supabase.auth.getUser();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const { data: profile } = await supabase
     .from('profiles')
     .select('first_name, last_name')
-    .eq('id', user.user?.id)
+    .eq('user_id', user?.id ?? '')
+    .limit(1)
     .single();
 
   return (
@@ -22,7 +26,7 @@ export async function UserInfo() {
         />
         <div>
           <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
-            {user.user?.role}
+            {user?.role}
           </Text>
 
           <Text fz="lg" fw={500} className={classes.name}>
@@ -32,14 +36,14 @@ export async function UserInfo() {
           <Group wrap="nowrap" gap={10} mt={3}>
             <IconAt stroke={1.5} size="1rem" className={classes.icon} />
             <Text fz="xs" c="dimmed">
-              {user.user?.email}
+              {user?.email}
             </Text>
           </Group>
 
           <Group wrap="nowrap" gap={10} mt={5}>
             <IconPhoneCall stroke={1.5} size="1rem" className={classes.icon} />
             <Text fz="xs" c="dimmed">
-              {user.user?.phone}
+              {user?.phone}
             </Text>
           </Group>
         </div>
