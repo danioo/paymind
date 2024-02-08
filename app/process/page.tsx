@@ -4,6 +4,7 @@ import { getServerClient } from '@/utils/supabase-server';
 import { Container } from '@mantine/core';
 import { redirect } from 'next/navigation';
 import { Client, product } from 'mindee';
+import { Database } from '@/types/schema.gen';
 
 export default async function Process() {
   const processFile = async (data: FormData) => {
@@ -50,9 +51,8 @@ export default async function Process() {
           invoice_number: invoiceNumber,
           due_date: dueDate,
           invoice_amount: totalAmount,
-          // file_base64: base64String,
           user_id: user.data.user?.id,
-        })
+        } as Database['public']['Tables']['invoices']['Insert'])
         .select('id')
         .single();
 
@@ -67,9 +67,8 @@ export default async function Process() {
       await supabase.from('invoices').insert({
         due_date: dueDate,
         invoice_amount: totalAmount,
-        // file_base64: base64String,
         user_id: user.data.user?.id,
-      });
+      } as Database['public']['Tables']['invoices']['Insert']);
 
       redirect('/invoices');
     }
