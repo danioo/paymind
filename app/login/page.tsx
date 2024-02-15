@@ -4,9 +4,9 @@ import { useToggle, upperFirst } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
 import { Text, Paper, Group, Button, Stack } from '@mantine/core';
 import { useRouter } from 'next/navigation';
-import { PasswordInput, TextInput } from '@/components/Inputs/Inputs';
 import { ChangeEvent } from 'react';
 import { getBrowserClient } from '@/utils/supabase-client';
+import { PasswordInput, TextInput } from '@/components/Inputs/Inputs';
 
 type FormValues = {
   email: string;
@@ -35,13 +35,15 @@ export default function Profile() {
   const router = useRouter();
 
   const handleLogin = async (values: FormValues) => {
-    await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email: values.email,
       password: values.password,
     });
 
-    router.push('/');
-    router.refresh();
+    if (!error) {
+      router.push('/');
+      router.refresh();
+    }
   };
 
   return (
