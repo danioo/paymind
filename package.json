@@ -20,7 +20,7 @@
     "@mantine/hooks": "^7.3.2",
     "@mantine/modals": "^7.2.2",
     "@mantine/notifications": "^7.5.0",
-    "@supabase/ssr": "^0.0.10",
+    "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.0",
     "@tabler/icons-react": "^2.46.0",
     "dayjs": "^1.11.10",

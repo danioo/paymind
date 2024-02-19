@@ -397,10 +397,10 @@
     "@types/ws" "^8.5.10"
     ws "^8.14.2"
 
-"@supabase/ssr@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@supabase/ssr/-/ssr-0.0.10.tgz#b2595c7dab6cc37f51d1529118fab2df4510b3bf"
-  integrity sha512-eVs7+bNlff8Fd79x8K3Jbfpmf8P8QRA1Z6rUDN+fi4ReWvRBZyWOFfR6eqlsX6vTjvGgTiEqujFSkv2PYW5kbQ==
+"@supabase/ssr@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@supabase/ssr/-/ssr-0.1.0.tgz#78577f6f95753bbfa1ed106f8b59c14a321dfc24"
+  integrity sha512-bIVrkqjAK5G3KjkIMKYKtAOlCgRRplEWjrlyRyXSOYtgDieiOhk2ZyNAPsEOa1By9OZVxuX5eAW1fitdnuxayw==
   dependencies:
     cookie "^0.5.0"
     ramda "^0.29.0"
