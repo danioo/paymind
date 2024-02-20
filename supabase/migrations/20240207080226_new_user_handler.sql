@@ -7,7 +7,7 @@ CREATE OR REPLACE FUNCTION public.handle_new_user()
  SET search_path TO 'public'
 AS $function$
 begin
-  insert into profiles (user_id, first_name, last_name) values (new.id, new.raw_user_meta_data ->> 'first_name', new.raw_user_meta_data ->> 'last_name');
+  insert into profiles (user_id, first_name, last_name, email) values (new.id, new.raw_user_meta_data ->> 'first_name', new.raw_user_meta_data ->> 'last_name', new.email);
   insert into usages (user_id) values (new.id);
   return new;
 end;
