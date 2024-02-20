@@ -25,7 +25,7 @@
     "@tabler/icons-react": "^2.46.0",
     "dayjs": "^1.11.10",
     "lago-javascript-client": "^0.53.0-beta",
-    "mindee": "^4.6.1",
+    "mindee": "^4.8.2",
     "next": "^14.1.0",
     "posthog-js": "^1.93.2",
     "posthog-node": "^3.6.2",

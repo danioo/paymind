@@ -2292,10 +2292,10 @@ mimic-response@^2.0.0:
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-2.1.0.tgz#d13763d35f613d09ec37ebb30bac0469c0ee8f43"
   integrity sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==
 
-mindee@^4.6.1:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/mindee/-/mindee-4.7.0.tgz#d52e3f51c1899868c71cd31efe55054a33bfffe8"
-  integrity sha512-kMr9F885JDWWOTf9aNXRc7umPDBQRmN60i2aeEpTaWs/DEFkxYce4uIwekUhrcFoZTxaBdpyflLIbs8F7QZWfQ==
+mindee@^4.8.2:
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/mindee/-/mindee-4.8.2.tgz#753cd4cdb8f74cfb63b83271451de470452b5556"
+  integrity sha512-ZpADfwr+9sZr+O2JBYBtZaLWocUaOCA2SCh4I4nWIjyBtGIsTgbzzS1OAU1F13LPtr4FE2z8f2yKFkPlnXwV7A==
   dependencies:
     commander "~9.4.1"
     file-type "~16.5.4"
