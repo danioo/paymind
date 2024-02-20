@@ -141,10 +141,10 @@
     date-fns "^3.3.1"
     zustand "^3.7.2"
 
-"@knocklabs/react@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@knocklabs/react/-/react-0.1.5.tgz#9122004dd3322c1e9c6a818a75b989aa766b57fa"
-  integrity sha512-6mMnnBiHEZ1JqVctPdCkA/Dg0o1F9mFGVyi+bFugZhIlewZjKjpqv1WMgs3Kil1N1kzkBNu5TxFsM2Ii/2gnOQ==
+"@knocklabs/react@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@knocklabs/react/-/react-0.1.6.tgz#49984f1a1b1e095ae42305cc4ca47aea527d4996"
+  integrity sha512-MjsBUGIGhkE46sFBXA/PvKbKuVouRZJF6c1cE5E0Cb4HfpkLlCBIGBrACj++5kgqLdWyI3LMm9iteYjelfVdEA==
   dependencies:
     "@knocklabs/client" "*"
     "@knocklabs/react-core" "*"
