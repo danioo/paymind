@@ -27,7 +27,7 @@
     "lago-javascript-client": "^0.53.0-beta",
     "mindee": "^4.9.0",
     "next": "^14.1.0",
-    "posthog-js": "^1.110.0",
+    "posthog-js": "^1.116.1",
     "posthog-node": "^3.6.2",
     "react": "^18",
     "react-dom": "^18",
