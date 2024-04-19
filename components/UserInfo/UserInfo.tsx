@@ -19,11 +19,7 @@ export async function UserInfo() {
   return (
     <div>
       <Group wrap="nowrap">
-        <Avatar
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png"
-          size={94}
-          radius="md"
-        />
+        <Avatar src={null} size={94} radius="md" />
         <div>
           <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
             {user?.role}

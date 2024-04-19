@@ -38,18 +38,15 @@ export default function InvoicesTableActions({
 
   return (
     <Group>
-      <ActionIcon size="sm" onClick={() => router.push(`/invoices/${id}/edit`)}>
+      <ActionIcon onClick={() => router.push(`/invoices/${id}/edit`)}>
         <IconEdit />
       </ActionIcon>
 
-      <ActionIcon
-        size="sm"
-        onClick={() => toggleNotifications(notificationsEnabled, id)}
-      >
+      <ActionIcon onClick={() => toggleNotifications(notificationsEnabled, id)}>
         {notificationsEnabled ? <IconBellOff /> : <IconBell />}
       </ActionIcon>
 
-      <ActionIcon color="red" size="sm" onClick={() => deleteInvoice(id)}>
+      <ActionIcon color="red" onClick={() => deleteInvoice(id)}>
         <IconTrashXFilled />
       </ActionIcon>
     </Group>

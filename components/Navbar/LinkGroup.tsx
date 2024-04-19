@@ -15,6 +15,7 @@ import {
   IconHome2,
   IconFileInvoice,
   IconTextRecognition,
+  IconReceiptRefund,
 } from '@tabler/icons-react';
 import classes from './LinkGroup.module.css';
 import { User } from '@supabase/supabase-js';
@@ -104,6 +105,12 @@ const links = [
     label: 'My Invoices',
     icon: IconFileInvoice,
     link: '/invoices',
+    isPrivate: true,
+  },
+  {
+    label: 'Recurring payments',
+    icon: IconReceiptRefund,
+    link: '/recurring-payments',
     isPrivate: true,
   },
 ];
