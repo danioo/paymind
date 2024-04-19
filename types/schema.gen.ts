@@ -6,7 +6,7 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export interface Database {
+export type Database = {
   graphql_public: {
     Tables: {
       [_ in never]: never
@@ -77,16 +77,19 @@ export interface Database {
       }
       profiles: {
         Row: {
+          email: string | null
           first_name: string | null
           last_name: string | null
           user_id: string
         }
         Insert: {
+          email?: string | null
           first_name?: string | null
           last_name?: string | null
           user_id: string
         }
         Update: {
+          email?: string | null
           first_name?: string | null
           last_name?: string | null
           user_id?: string
@@ -96,6 +99,44 @@ export interface Database {
             foreignKeyName: "profiles_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      recurring_payments: {
+        Row: {
+          amount: number
+          created_at: string
+          date: string
+          id: number
+          paid: boolean
+          supplier_name: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          date: string
+          id?: number
+          paid?: boolean
+          supplier_name: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          date?: string
+          id?: number
+          paid?: boolean
+          supplier_name?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "recurring_payments_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
             referencedRelation: "users"
             referencedColumns: ["id"]
           }
@@ -398,4 +439,3 @@ export type Enums<
   : PublicEnumNameOrOptions extends keyof Database["public"]["Enums"]
   ? Database["public"]["Enums"][PublicEnumNameOrOptions]
   : never
-

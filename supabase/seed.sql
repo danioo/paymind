@@ -2,6 +2,8 @@ insert into auth.users (instance_id,id,aud,role,email,encrypted_password,email_c
 
 insert into public.invoices (invoice_number, invoice_amount, due_date, user_id, supplier_name, notifications_on) values ('INV-123', 123.45, '2024-03-01', '025763ef-f743-4266-b0d6-2cb860ba81b1', 'Play', false);
 
+insert into public.recurring_payments (user_id, supplier_name, amount, date, paid) values ('025763ef-f743-4266-b0d6-2cb860ba81b1', 'Eljot', 700, '2024-03-10', false);
+
 select cron.schedule (
   'usages-reset',
   '0 0 1 * *',
