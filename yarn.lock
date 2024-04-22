@@ -3562,7 +3562,7 @@ __metadata:
     postcss: ^8.4.38
     postcss-preset-mantine: ^1.9.0
     postcss-simple-vars: ^7.0.1
-    posthog-js: ^1.128.1
+    posthog-js: ^1.128.2
     posthog-node: ^3.6.2
     prettier: ^3.2.4
     react: ^18
@@ -4146,13 +4146,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"posthog-js@npm:^1.128.1":
-  version: 1.128.1
-  resolution: "posthog-js@npm:1.128.1"
+"posthog-js@npm:^1.128.2":
+  version: 1.128.2
+  resolution: "posthog-js@npm:1.128.2"
   dependencies:
     fflate: ^0.4.8
     preact: ^10.19.3
-  checksum: ee05431b19bb8b3f751f0fa76131e76e35af2afba4e47d7edbe1be856126b6b8259467db1ae51f54891283834be951ba35e89d327d44b7eda7258b0a7b8f84d6
+  checksum: 246513839114717e2a833665852620875acce70b9a7774e1e451241ca98433430bbd76017c8401a1fa09f2fb796f11147597863cc9af2d66e5ceb434a2806716
   languageName: node
   linkType: hard
 
