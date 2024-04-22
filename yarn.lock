@@ -294,12 +294,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^7.3.2":
-  version: 7.5.1
-  resolution: "@mantine/hooks@npm:7.5.1"
+"@mantine/hooks@npm:^7.8.0":
+  version: 7.8.0
+  resolution: "@mantine/hooks@npm:7.8.0"
   peerDependencies:
     react: ^18.2.0
-  checksum: f58f2d898e7c49e3dca2a27afe5ec5ebcbb205f6aa44bc2cbce3facb7981e11ed5030043249b4238a8d66656b2c36d01160098d4a7362dbefc25ae3254b43163
+  checksum: e8041d55e4f56731c210d386051b93a242350d8e79c8a61b642d761e432e393cc1067901335d9e9fdb70d21e326584ee291afde5c4e1a332a4dad937f8da07d5
   languageName: node
   linkType: hard
 
@@ -3536,7 +3536,7 @@ __metadata:
     "@mantine/dates": ^7.4.1
     "@mantine/dropzone": ^7.2.2
     "@mantine/form": ^7.5.2
-    "@mantine/hooks": ^7.3.2
+    "@mantine/hooks": ^7.8.0
     "@mantine/modals": ^7.2.2
     "@mantine/notifications": ^7.5.0
     "@supabase/ssr": ^0.1.0
