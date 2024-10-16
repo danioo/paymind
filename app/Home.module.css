@@ -58,11 +58,8 @@
 }
 
 .control {
-  margin: auto;
-
-  @media (max-width: $mantine-breakpoint-xs) {
-    flex: 1;
-  }
+  flex: 1;
+  justify-content: center;
 }
 
 .highlight {

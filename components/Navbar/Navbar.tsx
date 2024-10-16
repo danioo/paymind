@@ -4,6 +4,7 @@ import { NavbarLinksGroup } from './LinkGroup';
 import classes from './Navbar.module.css';
 import { getReadServerClient } from '@/utils/supabase-server';
 import { UsageCard } from '../UsageCard/UsageCard';
+import Image from 'next/image';
 
 export async function Navbar() {
   const supabase = getReadServerClient();
@@ -24,7 +25,7 @@ export async function Navbar() {
     <nav className={classes.navbar}>
       <div className={classes.header}>
         <Group justify="space-between">
-          <img src="logo.svg" />
+          <Image alt="logo" src="logo.svg" width="270" height="55" />
         </Group>
       </div>
 
