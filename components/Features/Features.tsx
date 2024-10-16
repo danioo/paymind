@@ -1,5 +1,5 @@
 import { Text, SimpleGrid, Container } from '@mantine/core';
-import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
+import { IconCoin, IconAlarmSnooze, IconRobot } from '@tabler/icons-react';
 import classes from './Features.module.css';
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -28,20 +28,20 @@ function Feature({ icon: Icon, title, description, ...others }: FeatureProps) {
 
 const mockdata = [
   {
-    icon: IconTruck,
+    icon: IconRobot,
     title: 'Artifical Intelligence',
     description:
       'Just upload an image of your invoice and start getting notifications.',
   },
   {
-    icon: IconCertificate,
+    icon: IconAlarmSnooze,
     title: 'Notifications',
     description: 'Get notifications in browser, via email, via SMS.',
   },
   {
     icon: IconCoin,
     title: 'Paid on time',
-    description: 'Stop to worry about unpaind invoices after due date',
+    description: 'Stop to worry about unpaind invoices after due date.',
   },
 ];
 

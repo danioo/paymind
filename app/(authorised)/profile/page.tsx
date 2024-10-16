@@ -1,9 +1,15 @@
 import { Button } from '@mantine/core';
 import { redirect } from 'next/navigation';
 import { UserInfo } from '@/components/UserInfo/UserInfo';
-import { getServerClient } from '@/utils/supabase-server';
+import { getReadServerClient, getServerClient } from '@/utils/supabase-server';
+import Link from 'next/link';
 
 export default async function Invoices() {
+  const supabase = getReadServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const handleLogout = async () => {
     'use server';
 
@@ -17,6 +23,13 @@ export default async function Invoices() {
   return (
     <>
       <UserInfo />
+
+      <Button
+        component={Link}
+        href={`https://billing.stripe.com/p/login/cN23djcuJcmubHa000?prefilled_email=${user?.email}`}
+      >
+        Manage your subscription
+      </Button>
 
       <form action={handleLogout}>
         <Button type="submit">LogOut</Button>

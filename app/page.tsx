@@ -1,7 +1,8 @@
-import { Container, Title, Group, Text } from '@mantine/core';
+import { Container, Title, Group, Text, Button } from '@mantine/core';
 import Features from '@/components/Features/Features';
 import Drawer from '@/components/Drawer/Drawer';
 import classes from './Home.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -21,14 +22,17 @@ export default function Home() {
 
             <Features />
 
-            <Group mt={30}>
-              {/* <Button radius="xl" size="md" className={classes.control}>
-                Join waitlist
-              </Button> */}
-              <Drawer
-                buttonLabel="Join waitlist"
-                buttonClassName={classes.control}
-              />
+            <Group className={classes.control}>
+              <Drawer buttonLabel="Join waitlist" buttonClassName="" />
+
+              <Button
+                component={Link}
+                href="/pricing"
+                color="white"
+                variant="outline"
+              >
+                Check pricing
+              </Button>
             </Group>
           </div>
         </div>
