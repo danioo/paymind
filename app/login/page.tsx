@@ -2,7 +2,7 @@
 
 import { useToggle, upperFirst } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
-import { Text, Paper, Group, Button, Stack } from '@mantine/core';
+import { Text, Paper, Group, Button, Stack, Container } from '@mantine/core';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent } from 'react';
 import { getBrowserClient } from '@/utils/supabase-client';
@@ -47,68 +47,51 @@ export default function Profile() {
   };
 
   return (
-    <Paper radius="md" shadow="sm" p="xl" m="xl">
-      <Text size="lg" pb="sm" fw={500}>
-        Welcome to paymind
-      </Text>
+    <Container p="xl">
+      <Paper radius="md" shadow="sm" p="xl">
+        <Text size="lg" pb="sm" ta="center" fw={500}>
+          Welcome to paymind
+        </Text>
 
-      <form onSubmit={form.onSubmit(handleLogin)}>
-        <Stack>
-          {/* {type === 'register' && (
+        <Text c="dimmed" size="sm" ta="center" mt={5} mb="xl">
+          Sign in to start using the app
+        </Text>
+
+        <form onSubmit={form.onSubmit(handleLogin)}>
+          <Stack>
             <TextInput
-              label="Name"
-              placeholder="Your name"
-              value={form.values.name}
-              onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
-              radius="md"
+              required
+              label="Email"
+              placeholder="hello@mantine.dev"
+              value={form.values.email}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                form.setFieldValue('email', event.currentTarget.value)
+              }
+              error={form.errors.email && 'Invalid email'}
             />
-          )} */}
 
-          <TextInput
-            required
-            label="Email"
-            placeholder="hello@mantine.dev"
-            value={form.values.email}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              form.setFieldValue('email', event.currentTarget.value)
-            }
-            error={form.errors.email && 'Invalid email'}
-          />
-
-          <PasswordInput
-            required
-            label="Password"
-            placeholder="Your password"
-            value={form.values.password}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              form.setFieldValue('password', event.currentTarget.value)
-            }
-            error={
-              form.errors.password &&
-              'Password should include at least 6 characters'
-            }
-          />
-
-          {/* {type === 'register' && (
-            <Checkbox
-              label="I accept terms and conditions"
-              checked={form.values.terms}
-              onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+            <PasswordInput
+              required
+              label="Password"
+              placeholder="Your password"
+              value={form.values.password}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                form.setFieldValue('password', event.currentTarget.value)
+              }
+              error={
+                form.errors.password &&
+                'Password should include at least 6 characters'
+              }
             />
-          )} */}
-        </Stack>
+          </Stack>
 
-        <Group justify="space-between" mt="xl">
-          {/* <Anchor component="button" type="button" c="dimmed" onClick={() => toggle()} size="xs">
-            {type === 'register'
-              ? 'Already have an account? Login'
-              : "Don't have an account? Register"}
-          </Anchor> */}
-          <Button type="submit" radius="xl" m="auto">
-            {upperFirst(type)}
-          </Button>
-        </Group>
-      </form>
-    </Paper>
+          <Group justify="space-between" mt="xl">
+            <Button type="submit" radius="xl" m="auto">
+              {upperFirst(type)}
+            </Button>
+          </Group>
+        </form>
+      </Paper>
+    </Container>
   );
 }
