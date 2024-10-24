@@ -3,7 +3,7 @@
 
 __metadata:
   version: 8
-  cacheKey: 10
+  cacheKey: 10c0
 
 "@aashutoshrathi/word-wrap@npm:^1.2.3":
   version: 1.2.6
@@ -3288,6 +3288,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"merge-refs@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "merge-refs@npm:1.3.0"
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/403d20d283a595565a6bef813415df509dad12a5ad157f0ae04861b3aee4a3691971ccae7079e20497d9f367a478ad60e5b63a2ca9ffb2cc3d511284b49b4bd6
+  languageName: node
+  linkType: hard
+
 "merge2@npm:^1.3.0, merge2@npm:^1.4.1":
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
@@ -3525,7 +3537,7 @@ __metadata:
     prettier: "npm:^3.2.4"
     react: "npm:^18"
     react-dom: "npm:^18"
-    react-pdf: "npm:^7.7.1"
+    react-pdf: "npm:^9.1.1"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -3905,6 +3917,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path2d@npm:^0.2.0":
+  version: 0.2.1
+  resolution: "path2d@npm:0.2.1"
+  checksum: 10c0/6fc743b24af146fd140339af717c2f874651377dc0cb215d5e761b5bdc5528cb9458f473fff896de54e23f0374dc6819d43740daf7cfed5fd430fc82791510a6
+  languageName: node
+  linkType: hard
+
 "pdf-lib@npm:~1.17.1":
   version: 1.17.1
   resolution: "pdf-lib@npm:1.17.1"
@@ -3929,6 +3948,21 @@ __metadata:
     path2d-polyfill:
       optional: true
   checksum: 8/62f5a64ca0b2dbc855701ebf9a65c3e48c3c9aa5d64c50eb42bb9ff50a326f3eddab7f2a134ef0398398b1ccff9d842935b9f31358c9103bdc71406632d1a7fa
+  languageName: node
+  linkType: hard
+
+"pdfjs-dist@npm:4.4.168":
+  version: 4.4.168
+  resolution: "pdfjs-dist@npm:4.4.168"
+  dependencies:
+    canvas: "npm:^2.11.2"
+    path2d: "npm:^0.2.0"
+  dependenciesMeta:
+    canvas:
+      optional: true
+    path2d:
+      optional: true
+  checksum: 10c0/61bad19fe0aae8261631d425bd96368cf0b8803c3a4446615456dddd867ef3e5ba15c11a1caabb8033bce9538e3ad8262c24a56fa68b150c6ee0eb9e26a9f3a7
   languageName: node
   linkType: hard
 
@@ -4206,7 +4240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-pdf@npm:*, react-pdf@npm:^7.7.1":
+"react-pdf@npm:*":
   version: 7.7.1
   resolution: "react-pdf@npm:7.7.1"
   dependencies:
@@ -4227,6 +4261,29 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 8/8c43cbc844362028e4cff0c4ac95f1f59a58ca578a620ef5711bc8f5166f7a3df4f3c321367e74cddc3e46e29b990f3a6d01f9a5d46e0833e5f97f475913c895
+  languageName: node
+  linkType: hard
+
+"react-pdf@npm:^9.1.1":
+  version: 9.1.1
+  resolution: "react-pdf@npm:9.1.1"
+  dependencies:
+    clsx: "npm:^2.0.0"
+    dequal: "npm:^2.0.3"
+    make-cancellable-promise: "npm:^1.3.1"
+    make-event-props: "npm:^1.6.0"
+    merge-refs: "npm:^1.3.0"
+    pdfjs-dist: "npm:4.4.168"
+    tiny-invariant: "npm:^1.0.0"
+    warning: "npm:^4.0.0"
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/441faf64ef4809920b2fc1a9dfbbae976f74193f54015764beafd82981c79fa6bbaee9bf774633f6ea63f9b701523df7bbf48acae6e0fb100ccc2e1cc33fbdaa
   languageName: node
   linkType: hard
 
