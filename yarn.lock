@@ -3530,7 +3530,7 @@ __metadata:
     mindee: "npm:^4.9.0"
     next: "npm:^14.2.10"
     postcss: "npm:^8.4.38"
-    postcss-preset-mantine: "npm:^1.9.0"
+    postcss-preset-mantine: "npm:^1.17.0"
     postcss-simple-vars: "npm:^7.0.1"
     posthog-js: "npm:^1.128.1"
     posthog-node: "npm:^3.6.2"
@@ -4030,15 +4030,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-preset-mantine@npm:^1.9.0":
-  version: 1.13.0
-  resolution: "postcss-preset-mantine@npm:1.13.0"
+"postcss-preset-mantine@npm:^1.17.0":
+  version: 1.17.0
+  resolution: "postcss-preset-mantine@npm:1.17.0"
   dependencies:
     postcss-mixins: "npm:^9.0.4"
     postcss-nested: "npm:^6.0.1"
   peerDependencies:
     postcss: ">=8.0.0"
-  checksum: 8/78445c39e581a03f839ac82d11210f64d30061dfb237de0a6a5cd4520118ba69e77af00e7b2762cba79ecdf26da9f7731e41e7e559b6454966f3415ffe172e29
+  checksum: 10c0/9410196f8c9b6389f376abe04b732b92179859b195d1422d02e94e46fca1503272b553993727af396cddc6c094a162d73a9a8fd1f85bd3ac2c41135c9365210a
   languageName: node
   linkType: hard
 
