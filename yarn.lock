@@ -351,18 +351,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dates@npm:^7.4.1":
-  version: 7.5.1
-  resolution: "@mantine/dates@npm:7.5.1"
+"@mantine/dates@npm:^7.13.4":
+  version: 7.13.4
+  resolution: "@mantine/dates@npm:7.13.4"
   dependencies:
-    clsx: "npm:2.0.0"
+    clsx: "npm:^2.1.1"
   peerDependencies:
-    "@mantine/core": 7.5.1
-    "@mantine/hooks": 7.5.1
+    "@mantine/core": 7.13.4
+    "@mantine/hooks": 7.13.4
     dayjs: ">=1.0.0"
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 8/a6cf62136510fb21acb94433b9526b9a375afca230eb8f24ff2dabbfc866630e1f8d55a81672f87c3728da4828e2fafeb7efa59b12a0410adcde538ed7d7d315
+  checksum: 10c0/7d5d07f9c5477e2f2a564910b47c1eff40ceef541ce71688c55e1141dbdf77b3e3543298f29773d5aa209a1ff454774d91aa956ec1bdcf12d00169a48330036d
   languageName: node
   linkType: hard
 
@@ -1931,6 +1931,13 @@ __metadata:
   version: 2.1.0
   resolution: "clsx@npm:2.1.0"
   checksum: 8/43fefc29b6b49c9476fbce4f8b1cc75c27b67747738e598e6651dd40d63692135dc60b18fa1c5b78a2a9ba8ae6fd2055a068924b94e20b42039bd53b78b98e1d
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
   languageName: node
   linkType: hard
 
@@ -3976,7 +3983,7 @@ __metadata:
     "@knocklabs/types": "npm:^0.1.3"
     "@lucidtech/las-sdk-node": "npm:^14.0.1"
     "@mantine/core": "npm:^7.2.2"
-    "@mantine/dates": "npm:^7.4.1"
+    "@mantine/dates": "npm:^7.13.4"
     "@mantine/dropzone": "npm:^7.2.2"
     "@mantine/form": "npm:^7.5.2"
     "@mantine/hooks": "npm:^7.3.2"
