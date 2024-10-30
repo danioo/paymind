@@ -1170,12 +1170,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20":
+"@types/node@npm:*":
   version: 20.12.7
   resolution: "@types/node@npm:20.12.7"
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 8/7cc979f7e2ca9a339ec71318c3901b9978555257929ef3666987f3e447123bc6dc92afcc89f6347e09e07d602fde7d51bcddea626c23aa2bb74aeaacfd1e1686
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22":
+  version: 22.8.1
+  resolution: "@types/node@npm:22.8.1"
+  dependencies:
+    undici-types: "npm:~6.19.8"
+  checksum: 10c0/83550fdf72a7db5b55eceac3f4fb038844eaee20202bdd2297a8248370cfa08317bda1605b781a8043eda4f173b75e73632e652fc85509eb14dfef78fa17337f
   languageName: node
   linkType: hard
 
@@ -3986,7 +3995,7 @@ __metadata:
     "@supabase/supabase-js": "npm:^2.39.0"
     "@tabler/icons-react": "npm:^2.46.0"
     "@types/next": "npm:^9.0.0"
-    "@types/node": "npm:^20"
+    "@types/node": "npm:^22"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     "@types/react-pdf": "npm:^7.0.0"
@@ -5695,6 +5704,13 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 8/3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.8":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
   languageName: node
   linkType: hard
 
