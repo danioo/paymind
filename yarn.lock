@@ -3640,10 +3640,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lago-javascript-client@npm:^0.53.0-beta":
-  version: 0.53.0-beta
-  resolution: "lago-javascript-client@npm:0.53.0-beta"
-  checksum: 8/08b1e99c6a3aa9b1ba517cc17150788b73a68ba4cc1e47844bcbfab408c3c386c02aeb0a22568949729a9324926a0b0b65e40b0bb13c04de25e90382e877679f
+"lago-javascript-client@npm:^1.15.0":
+  version: 1.15.0
+  resolution: "lago-javascript-client@npm:1.15.0"
+  checksum: 10c0/fbd004010adbbb7cc16bb659d0a65a467e7e34ed0a9c62b617b18ae4ea05d7050ce2e1f7b0d6dd0bc40f7330e38f046bc61037e61c457edc51c39cf799f49202
   languageName: node
   linkType: hard
 
@@ -4015,7 +4015,7 @@ __metadata:
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-import: "npm:^2.29.0"
     eslint-plugin-prettier: "npm:^5.0.1"
-    lago-javascript-client: "npm:^0.53.0-beta"
+    lago-javascript-client: "npm:^1.15.0"
     mindee: "npm:^4.17.1"
     next: "npm:^14.2.10"
     postcss: "npm:^8.4.38"
