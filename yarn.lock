@@ -2012,6 +2012,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3.38.1":
+  version: 3.39.0
+  resolution: "core-js@npm:3.39.0"
+  checksum: 10c0/f7602069b6afb2e3298eec612a5c1e0c3e6a458930fbfc7a4c5f9ac03426507f49ce395eecdd2d9bae9024f820e44582b67ffe16f2272395af26964f174eeb6b
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -4021,7 +4028,7 @@ __metadata:
     postcss: "npm:^8.4.38"
     postcss-preset-mantine: "npm:^1.17.0"
     postcss-simple-vars: "npm:^7.0.1"
-    posthog-js: "npm:^1.128.1"
+    posthog-js: "npm:^1.186.2"
     posthog-node: "npm:^3.6.2"
     prettier: "npm:^3.3.3"
     react: "npm:^18"
@@ -4572,13 +4579,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"posthog-js@npm:^1.128.1":
-  version: 1.128.1
-  resolution: "posthog-js@npm:1.128.1"
+"posthog-js@npm:^1.186.2":
+  version: 1.186.2
+  resolution: "posthog-js@npm:1.186.2"
   dependencies:
+    core-js: "npm:^3.38.1"
     fflate: "npm:^0.4.8"
     preact: "npm:^10.19.3"
-  checksum: 8/ee05431b19bb8b3f751f0fa76131e76e35af2afba4e47d7edbe1be856126b6b8259467db1ae51f54891283834be951ba35e89d327d44b7eda7258b0a7b8f84d6
+    web-vitals: "npm:^4.2.0"
+  checksum: 10c0/72d0c0300d88414f3fde1412f144f10c4afe7d8abf304e0f800f7d229fdc2e11050d98b06b1be62c24a2253f50aa12ef91ad2ab27ee9f4a572d63ce260b7693a
   languageName: node
   linkType: hard
 
@@ -5836,6 +5845,13 @@ __metadata:
   dependencies:
     loose-envify: "npm:^1.0.0"
   checksum: 8/4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^4.2.0":
+  version: 4.2.4
+  resolution: "web-vitals@npm:4.2.4"
+  checksum: 10c0/383c9281d5b556bcd190fde3c823aeb005bb8cf82e62c75b47beb411014a4ed13fa5c5e0489ed0f1b8d501cd66b0bebcb8624c1a75750bd5df13e2a3b1b2d194
   languageName: node
   linkType: hard
 
