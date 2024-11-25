@@ -24,7 +24,7 @@
     "@supabase/supabase-js": "^2.39.0",
     "@tabler/icons-react": "^2.46.0",
     "dayjs": "^1.11.10",
-    "lago-javascript-client": "^0.53.0-beta",
+    "lago-javascript-client": "^1.16.0",
     "mindee": "^4.17.1",
     "next": "^14.2.10",
     "posthog-js": "^1.128.1",
